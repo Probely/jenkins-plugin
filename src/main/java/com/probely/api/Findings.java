@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Findings {
     private int count;
+    private List<Finding> results;
 
     public int getCount() {
         return count;
@@ -20,6 +21,4 @@ public class Findings {
     public void setResults(List<Finding> results) {
         this.results = results;
     }
-
-    private List<Finding> results;
 }

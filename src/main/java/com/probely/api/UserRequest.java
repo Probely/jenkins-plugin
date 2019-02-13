@@ -1,18 +1,17 @@
 package com.probely.api;
 
 import com.probely.util.ApiUtils;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
 
 import java.io.IOException;
 
 public class UserRequest {
     private final String authToken;
     private final String baseUrl;
-    private final HttpClient httpClient;
+    private final CloseableHttpClient httpClient;
 
-    public UserRequest(String authToken, String url, HttpClient httpClient) {
+    public UserRequest(String authToken, String url, CloseableHttpClient httpClient) {
         this.authToken = authToken;
         this.baseUrl = url;
         this.httpClient = httpClient;
@@ -20,9 +19,8 @@ public class UserRequest {
 
     public User get() throws IOException {
         HttpGet request = new HttpGet(baseUrl);
-        ResponseHandler<String> handler = ApiUtils.buildResponseHandler();
         ApiUtils.addRequiredHeaders(authToken, request);
-        String response = httpClient.execute(request, handler);
+        String response = ApiUtils.get(httpClient, request);
         return UserDeserializer.deserialize(response);
     }
 }

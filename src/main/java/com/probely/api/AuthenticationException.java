@@ -4,11 +4,11 @@ import org.apache.http.client.ClientProtocolException;
 
 public class AuthenticationException extends ClientProtocolException {
     private static final long serialVersionUID = 1L;
-        public AuthenticationException() {
+
+    public AuthenticationException() {
     }
 
     public AuthenticationException(String s) {
         super(s);
     }
-
 }

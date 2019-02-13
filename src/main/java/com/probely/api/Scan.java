@@ -96,6 +96,4 @@ public class Scan {
     public void setCreated(Date created) {
         this.created = created;
     }
-
-
 }
