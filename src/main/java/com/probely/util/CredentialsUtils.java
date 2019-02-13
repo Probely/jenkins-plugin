@@ -30,7 +30,6 @@ public class CredentialsUtils {
         return CredentialsProvider.findCredentialById(credentialsId, StringCredentials.class, run);
     }
 
-
     public static Credentials getStringCredentials(String credentialsId, Item item) {
         Authentication acl = ACL.SYSTEM;
         DomainRequirement requirement = new DomainRequirement();
