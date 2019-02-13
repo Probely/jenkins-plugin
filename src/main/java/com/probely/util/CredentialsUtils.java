@@ -30,12 +30,12 @@ public class CredentialsUtils {
         return CredentialsProvider.findCredentialById(credentialsId, StringCredentials.class, run);
     }
 
+
     public static Credentials getStringCredentials(String credentialsId, Item item) {
-        Class credsType = StringCredentials.class;
         Authentication acl = ACL.SYSTEM;
         DomainRequirement requirement = new DomainRequirement();
         return CredentialsMatchers.firstOrNull(
-                CredentialsProvider.lookupCredentials(credsType, item, acl, requirement),
-                CredentialsMatchers.allOf(CredentialsMatchers.withId(credentialsId)));
+                CredentialsProvider.lookupCredentials(StringCredentials.class, item, acl, requirement),
+                CredentialsMatchers.withId(credentialsId));
     }
 }
