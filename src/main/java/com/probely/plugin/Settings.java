@@ -8,6 +8,6 @@ public class Settings {
     public static final String PLUGIN_DISPLAY_NAME = "Scan with Probely";
 
     public static final String ERR_CREDS_INVALID = "Credentials are invalid";
-    public static final String ERR_CREDS_NOT_FOUND = "Could not find credentials";
-    public static final String ERR_API_CONN = "Error connecting to API";
+    public static final String ERR_CREDS_NOT_FOUND = "Credentials not found";
+    public static final String ERR_API_CONN = "Could not connect to the API";
 }

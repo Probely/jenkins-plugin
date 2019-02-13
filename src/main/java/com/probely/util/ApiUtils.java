@@ -20,14 +20,18 @@ public class ApiUtils {
     private static final String CONTENT_TYPE_JSON = "application/json";
     private static final int API_TIMEOUT_MS = 30000;
 
-    public static CloseableHttpClient buildHttpClient() {
+    public static CloseableHttpClient buildHttpClient(int timeout) {
         RequestConfig config = RequestConfig.custom()
-                .setConnectTimeout(API_TIMEOUT_MS)
-                .setSocketTimeout(API_TIMEOUT_MS)
+                .setConnectTimeout(timeout)
+                .setSocketTimeout(timeout)
                 .build();
         HttpClientBuilder builder = HttpClientBuilder.create();
         builder.setDefaultRequestConfig(config);
         return builder.build();
+    }
+
+    public static CloseableHttpClient buildHttpClient() {
+        return buildHttpClient(API_TIMEOUT_MS);
     }
 
     public static void addRequiredHeaders(String authToken, HttpRequestBase request) {
@@ -40,13 +44,17 @@ public class ApiUtils {
     public static String get(CloseableHttpClient httpClient,
                              HttpGet request) throws IOException {
         CloseableHttpResponse resp = httpClient.execute(request);
-        return handleResponse(resp);
+        String result = handleResponse(resp);
+        request.releaseConnection();
+        return result;
     }
 
     public static String post(CloseableHttpClient httpClient,
                               HttpPost request) throws IOException {
         CloseableHttpResponse resp = httpClient.execute(request);
-        return handleResponse(resp);
+        String result = handleResponse(resp);
+        request.releaseConnection();
+        return result;
     }
 
     private static String handleResponse(CloseableHttpResponse resp) throws IOException {

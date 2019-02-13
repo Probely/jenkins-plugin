@@ -121,12 +121,12 @@ public class ProbelyScanBuilder extends Builder implements SimpleBuildStep {
                 return FormValidation.error(Settings.ERR_CREDS_INVALID);
             }
 
-            CloseableHttpClient httpClient = ApiUtils.buildHttpClient();
+            int timeout = 5000;
+            CloseableHttpClient httpClient = ApiUtils.buildHttpClient(timeout);
             boolean isValid = false;
             try {
                 UserRequest request = new UserRequest(authToken, Settings.API_PROFILE_URL, httpClient);
-                User user = request.get();
-                isValid = true;
+                isValid = request.get() != null;
             } catch (IOException ioe) {
                 // Ignore
             } finally {
