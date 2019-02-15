@@ -8,8 +8,8 @@
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
-    <artifactId>probely-scan</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>probely-security</artifactId>
+    <version>1.0.0</version>
     <packaging>hpi</packaging>
     <properties>
         <jenkins.version>2.150.2</jenkins.version>
@@ -51,14 +51,13 @@
         </dependency>
     </dependencies>
 
-    <!-- If you want this to appear on the wiki page:
     <developers>
       <developer>
-        <id>bhacker</id>
-        <name>Bob Q. Hacker</name>
-        <email>bhacker@nowhere.net</email>
+        <id>poupas</id>
+        <name>Joao Poupino</name>
+        <email>joao@probely.com</email>
       </developer>
-    </developers> -->
+    </developers>
 
     <!-- Assuming you want to host on @jenkinsci:
     <url>https://wiki.jenkins.io/display/JENKINS/TODO+Plugin</url>
