@@ -123,19 +123,23 @@ public class ProbelyScanBuilder extends Builder implements SimpleBuildStep {
 
             int timeout = 5000;
             CloseableHttpClient httpClient = ApiUtils.buildHttpClient(timeout);
-            boolean isValid = false;
+            String error = null;
             try {
                 UserRequest request = new UserRequest(authToken, Settings.API_PROFILE_URL, httpClient);
-                isValid = request.get() != null;
+                if (request.get() == null) {
+                    error = Settings.ERR_CREDS_INVALID;
+                }
+            } catch (AuthenticationException aex) {
+                error = Settings.ERR_CREDS_INVALID;
             } catch (IOException ioe) {
-                // Ignore
+                error = Settings.ERR_API_CONN;
             } finally {
                 ApiUtils.closeHttpClient(httpClient);
             }
-            if (isValid) {
-                return FormValidation.ok();
+            if (error == null) {
+                return FormValidation.ok(Settings.MSG_CREDS_VALID);
             } else {
-                return FormValidation.error(Settings.ERR_API_CONN);
+                return FormValidation.error(error);
             }
         }
     }
