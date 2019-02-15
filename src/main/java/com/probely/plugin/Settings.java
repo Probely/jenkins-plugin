@@ -5,7 +5,7 @@ public class Settings {
     public static final String API_TARGET_URL = API_URL + "/targets";
     public static final String API_PROFILE_URL = API_URL + "/profile/";
 
-    public static final String PLUGIN_DISPLAY_NAME = "Probely Security Scanner Plugin";
+    public static final String PLUGIN_DISPLAY_NAME = "Probely Security Scanner";
 
     public static final String ERR_CREDS_INVALID = "Credentials are invalid";
     public static final String ERR_CREDS_NOT_FOUND = "Credentials not found";
