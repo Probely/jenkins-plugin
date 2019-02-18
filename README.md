@@ -16,32 +16,32 @@ and is targeted at companies that build online services
 
 ![Jenkins](/images/install_plugin_0.png)
 
-2. Click on "**Manage Jenkins**"
+2. Click on **Manage Jenkins**
 
 ![Manage Jenkins](/images/install_plugin_1.png)
 
-3. Click on "**Manage Plugins**"
+3. Click on **Manage Plugins**
 
 ![Manage Plugins](/images/install_plugin_2.png)
 
-4. Click on the "**Available**" tab
+4. Click on the **Available** tab
 
 ![Available](/images/install_plugin_3.png)
 
-5. On the "**Filter**" search box, enter "**probely**"
-6. Select the "**Probely Security Scanner**" plugin
-7. Click on "**Download now and install after restart**"
+5. On the **Filter** search box, enter **probely**
+6. Select the **Probely Security Scanner** plugin
+7. Click on **Download now and install after restart**
 8. After Jenkins restarts, the plugin will be ready to use
 
 # Generating an API key
 Before using the plugin, you first need to create an API key.
 
-1. Go to "**https://app.probely.com**" and log in
+1. Go to https://app.probely.com and log in
 1. Select a target from the drop-down list
-1. Go to the "**Settings**" page
-1. Click on the "**Integrations**" tab
-1. Write a name for the API Key. Since we want this API Key for Jenkins, we name it "**Jenkins**"
-1. Click on "**Generate New Key**"
+1. Go to the **Settings** page
+1. Click on the **Integrations** tab
+1. Write a name for the API Key. Since we want this API Key for Jenkins, we name it **Jenkins**
+1. Click on **Generate New Key**
 
 ![Creating an API key](/images/new_api_key.png)
 
@@ -54,19 +54,19 @@ We will describe how to use the plugin in both project types.
 
 ## Configuring credentials
 
-1. Click on "**Credentials**"
+1. Click on **Credentials**
 
 ![Credentials](/images/credentials_0.png)
 
 2. Click on the down arrow near "(global)" to enable the dropdown menu and choose 
-"**Add credentials**"
+**Add credentials**
 
 ![Add Credentials](/images/credentials_1.png)
 
-1. On the credentials kind dropdown menu, choose "**Secret text**"
-1. Enter the API key on "**Secret**" textbox
-1. Enter a value for the credentials in the "**ID**" textbox, for example "**probely-test-site**"
-1. Enter an optional Description and click "**OK**"
+1. On the credentials kind dropdown menu, choose **Secret text**
+1. Enter the API key on **Secret** textbox
+1. Enter a value for the credentials in the **ID** textbox, for example **probely-test-site**
+1. Enter an optional Description and click **OK**
 
 ![Add Secret](/images/credentials_2.png)
 
@@ -74,11 +74,11 @@ We will describe how to use the plugin in both project types.
 
 Freestyle Jenkins projects have been traditionally used to create pipeline-like setups by chaining build steps together. To enable Probely in a Freestyle project, the following steps may be used.
 
-1. Click on "**New Item**"
+1. Click on **New Item**
 
 ![New Item](/images/new_item.png)
 
-2. Enter your project name, choose "**Freestyle Project**" and click "**OK**"
+2. Enter your project name, choose **Freestyle Project** and click **OK**
 
 ![Freestyle Project](/images/freestyle_0.png)
 
@@ -88,7 +88,7 @@ We assume that all required steps have been properly configured, such as checkin
 
 1. Add the `Target Id`. As defined in the **Generating an API key** step.
 1. Select the right credentials, which were configured in **Configuring credentials**. If the connection to Probely's API is working correctly, and the credentials are valid, you should see the message "Credentials verified sucessfully".
-1. When all steps are properly configured, click on "**Save**"
+1. When all steps are properly configured, click on **Save**
 
 ![Probely step](/images/freestyle_1.png)
 
@@ -96,11 +96,11 @@ We assume that all required steps have been properly configured, such as checkin
 
 Pipeline projects are the new way to create build/test/deploy (among others) pipelines in Jenkins. Pipelines are defined in a `Jenkinfile`, which can be configured in an older imperative syntax, or in a more modern declarative syntax. We describe how to use Probely using a declarative `Jenkinsfile` to build a simple build/test/scan Pipeline.
 
-1. Click on "**New Item**"
+1. Click on **New Item**
 
 ![New Item](/images/new_item.png)
 
-2. Enter your project name, choose "**Pipeline Project**" and click "**OK**"
+2. Enter your project name, choose **Pipeline Project** and click **OK**
 
 ![Pipeline](/images/pipeline_0.png)
 
