@@ -152,5 +152,3 @@ $ git clone https://github.com/jenkinsci/probely-security-plugin.git
 $ cd probely-security
 $ maven hpi:run
 ```
-
-```bash
