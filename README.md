@@ -12,19 +12,15 @@ in order to automatize security testing. Probely runs in the cloud as a SaaS
 and is targeted at companies that build online services
 
 # Installing the plugin
-1. Open Jenkins
-
-![Jenkins](/images/install_plugin_0.png)
-
-2. Click on **Manage Jenkins**
+1. Open Jenkins and click on **Manage Jenkins**
 
 ![Manage Jenkins](/images/install_plugin_1.png)
 
-3. Click on **Manage Plugins**
+2. Click on **Manage Plugins**
 
 ![Manage Plugins](/images/install_plugin_2.png)
 
-4. Click on the **Available** tab
+3. Click on the **Available** tab
 
 ![Available](/images/install_plugin_3.png)
 
