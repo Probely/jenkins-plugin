@@ -9,7 +9,7 @@ interface. Probely also provides tailored instructions on how to fix the
 vulnerabilities (including snippets of code). By using its API, it can be 
 integrated into the development processes and the continuous integration tools 
 in order to automatize security testing. Probely runs in the cloud as a SaaS 
-and is targeted at companies that build online services
+and is targeted at companies that build online services.
 
 # Installing the plugin
 1. Open Jenkins and click on **Manage Jenkins**
@@ -100,10 +100,11 @@ Pipeline projects are the new way to create build/test/deploy (among others) pip
 
 ![Pipeline](/images/pipeline_0.png)
 
-3. Create a Jenkinsfile on the root of your repository
+3. Create a Jenkinsfile
 
 We assume that the step to check out source code from your SCM is properly configured.
 The following `Jenkinsfile` may be used as an example to add Probely to your pipeline.
+It should be placed in the root of your source code repository.
 This pipeline consists of an hypothetical Java project, built with Gradle, with two stages: 
 one running units tests and the other launching a scan with Probely. 
 Note that the `targetId` and `credentialsId` value refer to the credentials obtained and configured previosuly.
@@ -135,11 +136,11 @@ pipeline {
 ![Pipeline using Jenkinsfile](/images/pipeline_1.png)
 
 
-# Contributing
+# Building and Contributing
 
-You are welcome to contribute to the plugin. To build it, be sure to install the Java Development Kit (JDK) 1.8 and Maven.
+Contributions are very welcome. To build the plugin, be sure to install the Java Development Kit (JDK) 1.8 and Maven.
 
-A minimal example on how to build and run the plugin on Ubuntu Linux follows. It will also build on macOS and Windows, provided you have the required packages. After running the commands below, you will have a test Jenkins instance running with this plugin.
+A minimal example on how to build and run the plugin on Ubuntu Linux follows. It will also build on macOS and Windows, provided you have the required packages installed. After running the commands below, you will have a test Jenkins instance running with the plugin.
 
 ```bash
 
