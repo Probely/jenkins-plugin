@@ -1,6 +1,6 @@
 # Probely Security Scanner Jenkins Plugin
-This plugin uses [Probely](https://probely.com) to scan your web application for 
-security vulnerabilities.
+This Jenkins plugin uses [Probely](https://probely.com) to scan your web application for 
+security vulnerabilities. It enables security testing in your CI/CD pipeline.
 
 Probely is a Web Vulnerability Scanning suite for Agile Teams. It provides 
 continuous scanning of your Web Applications and lets you efficiently manage 
@@ -15,6 +15,8 @@ the lifecycle of the vulnerabilities found. Some of its main features are:
  * Re-test vulnerabilities, define custom headers, multiple users, CVSS score, scheduling, and more.
 
 # Installing the plugin
+Installing and setting up the plugin will take you less than 5 minutes.
+
 1. Open Jenkins and click on **Manage Jenkins**
 
 ![Manage Jenkins](/images/install_plugin_1.png)
@@ -30,10 +32,10 @@ the lifecycle of the vulnerabilities found. Some of its main features are:
 5. On the **Filter** search box, enter **probely**
 6. Select the **Probely Security Scanner** plugin
 7. Click on **Download now and install after restart**
-8. After Jenkins restarts, the plugin will be ready to use
+8. After Jenkins restarts, the plugin will be installed. Continue reading to setup the required Probely API key.
 
 # Generating an API key
-Before using the plugin, you first need to create an API key.
+Before using the plugin, you first need to create an API key for Jenkins to be able to start a scan with Probely.
 
 1. Go to https://app.probely.com and log in
 1. Select a target from the drop-down list
@@ -44,7 +46,7 @@ Before using the plugin, you first need to create an API key.
 
 ![Creating an API key](/images/new_api_key.png)
 
-After the API is created, please take note of the `Target id` and API key values. They will be required to configure the Plugin credentials later on.
+After the API key is created, please take note of the `Target id` and API key values. They will be required to configure the Plugin credentials later on.
 
 # Configuring the plugin
 
@@ -57,13 +59,13 @@ We will describe how to use the plugin in both project types.
 
 ![Credentials](/images/credentials_0.png)
 
-2. Click on the down arrow near "(global)" to enable the dropdown menu and choose 
+2. Click on the down arrow near **(global)** to enable the dropdown menu and choose 
 **Add credentials**
 
 ![Add Credentials](/images/credentials_1.png)
 
-1. On the credentials kind dropdown menu, choose **Secret text**
-1. Enter the API key on **Secret** textbox
+1. On the Kind dropdown menu, choose **Secret text**
+1. Enter the API key in the **Secret** textbox
 1. Enter a value for the credentials in the **ID** textbox, for example **probely-test-site**
 1. Enter an optional Description and click **OK**
 
