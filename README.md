@@ -1,15 +1,18 @@
-# Summary
+# Probely Security Scanner Jenkins Plugin
 This plugin uses [Probely](https://probely.com) to scan your web application for 
 security vulnerabilities.
 
 Probely is a Web Vulnerability Scanning suite for Agile Teams. It provides 
 continuous scanning of your Web Applications and lets you efficiently manage 
-the lifecycle of the vulnerabilities found, in a sleek and intuitive web 
-interface. Probely also provides tailored instructions on how to fix the 
-vulnerabilities (including snippets of code). By using its API, it can be 
-integrated into the development processes and the continuous integration tools 
-in order to automatize security testing. Probely runs in the cloud as a SaaS 
-and is targeted at companies that build online services.
+the lifecycle of the vulnerabilities found. Some of its main features are:
+ * Tests for more than 5000 vulnerabilities 
+ * Authenticated scanning
+ * Tailored instructions on how to fix the vulnerabilities (including snippets of code)
+ * API for every single feature
+ * Jira and Slack integration
+ * PCI-DSS and OWASP compliance reports
+ * Designed for developers, easy to use, easy to understand.
+ * Re-test vulnerabilities, define custom headers, multiple users, CVSS score, scheduling, and more.
 
 # Installing the plugin
 1. Open Jenkins and click on **Manage Jenkins**
